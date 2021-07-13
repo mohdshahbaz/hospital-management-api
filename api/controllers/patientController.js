@@ -40,6 +40,6 @@ exports.deletePatient = async (req, res) => {
         if(err) {
             return res.status(404).send(err);
         }
-        res.status(200).json({ messagte: "Patient successfully deleted"});
+        res.status(200).json({ message: "Patient successfully deleted"});
     });
 };
