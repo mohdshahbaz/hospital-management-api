@@ -13,6 +13,16 @@ exports.listAllPatients = (req, res) => {
     });
 };
 
+// getSinglePatient function - To get single patient by id
+exports.getSinglePatient = (req, res) => {
+    Patient.findById({ _id: req.params.id }, (err, patient) => {
+        if(err) {
+            res.status(500).send(err);
+        }
+        res.status(200).json(patient);
+    });
+}
+
 // createNewPatient function - To create new patient
 exports.createNewPatient = (req, res) => {
     let newPatient = new Patient(req.body) 

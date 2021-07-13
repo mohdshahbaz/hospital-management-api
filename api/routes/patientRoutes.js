@@ -16,5 +16,6 @@ module.exports = function(app) {
     // put and delete request for /patients endpoints
     app.route("/patient/:id")
         .put(patientList.updatePatient)
+        .get(patientList.getSinglePatient)
         .delete(patientList.deletePatient);
 };
